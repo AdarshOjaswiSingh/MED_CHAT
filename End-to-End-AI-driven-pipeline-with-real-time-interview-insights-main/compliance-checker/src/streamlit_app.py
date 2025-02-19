@@ -94,7 +94,7 @@ def main():
 
     elif options == "About":
         st.header("About This App")
-        st.write("The End-to-End AI-Driven Recruitment Pipeline streamlines hiring by automating key processes like resume screening, skill assessment, and interview analysis. Using NLP, it delivers real-time insights into candidate communication and expertise, while a cultural fit scoring system evaluates alignment with organizational values. This scalable, AI-powered solution ensures faster, data-driven hiring decisions with improved precision.")
+        st.write("This app is an AI-powered mental health and medical support chatbot designed to assist users in managing their well-being through personalized recommendations, mood tracking, and interactive conversations. The chatbot provides mental health guidance, relaxation exercises, symptom analysis, and emotional support through both text and voice interactions.")
         st.write("Author: Adarsh Ojaswi Singh")
 
 if __name__ == "__main__":
