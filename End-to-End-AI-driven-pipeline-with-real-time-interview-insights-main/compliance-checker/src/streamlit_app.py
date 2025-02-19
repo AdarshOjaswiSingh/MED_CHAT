@@ -13,15 +13,15 @@ def load_database():
             return pd.read_excel(DB_PATH)
         else:
             st.warning("Database not found! Please upload a dataset.")
-            return pd.DataFrame()
+            return pd.DataFrame(columns=["Question", "Response"])
     except Exception as e:
         st.error(f"Failed to load database: {e}")
-        return pd.DataFrame()
+        return pd.DataFrame(columns=["Question", "Response"])
 
 def extract_pdf_text(file):
     try:
         reader = PdfReader(file)
-        return ''.join([page.extract_text() for page in reader.pages])
+        return '\n'.join([page.extract_text() for page in reader.pages if page.extract_text()])
     except Exception as e:
         st.error(f"Error reading PDF: {e}")
         return ""
@@ -74,17 +74,18 @@ def chatbot(database):
         st.sidebar.chat_message("assistant").markdown(response)
 
 def get_chatbot_response(user_input, database):
-    greetings = ["hi", "hello", "hey", "greetings"]
+    greetings = ["hi", "hello", "hey", "greetings", "good morning", "good evening", "namaste"]
     
     if user_input.lower() in greetings:
         return "Hello! How can I assist you today?"
     
     if not database.empty:
-        questions = database["Question"].tolist()
-        best_match, score = process.extractOne(user_input, questions)
-        if score > 70:
-            response = database.loc[database["Question"] == best_match, "Response"].values[0]
-            return response
+        questions = database["Question"].dropna().tolist()
+        if questions:
+            best_match, score = process.extractOne(user_input, questions)
+            if score > 70:
+                response = database.loc[database["Question"] == best_match, "Response"].values[0]
+                return response
     
     return "I'm here to help, but I couldn't find relevant data. Can you provide more details?"
 
