@@ -8,22 +8,17 @@ from fuzzywuzzy import process
 DB_PATH = "End-to-End-AI-driven-pipeline-with-real-time-interview-insights-main/compliance-checker/src/indian_health_chatbot_dataset.xlsx"
 
 def load_database():
-    try:
-        if os.path.exists(DB_PATH):
-            return pd.read_excel(DB_PATH)
-        else:
-            st.warning("Database not found! Please upload a dataset.")
-            return pd.DataFrame(columns=["Question", "Response"])
-    except Exception as e:
-        st.error(f"Failed to load database: {e}")
+    if not os.path.exists(DB_PATH):
+        st.error("Database not found! Please upload a dataset in the 'Data Upload' section.")
         return pd.DataFrame(columns=["Question", "Response"])
-
-def save_database(data):
     try:
-        data.to_excel(DB_PATH, index=False)
-        st.success("Database updated successfully!")
+        database = pd.read_excel(DB_PATH)
+        if database.empty:
+            st.warning("The dataset is empty. Please upload a valid dataset.")
+        return database
     except Exception as e:
-        st.error(f"Failed to save the database: {e}")
+        st.error(f"Error loading dataset: {e}")
+        return pd.DataFrame(columns=["Question", "Response"])
 
 def extract_pdf_text(file):
     try:
@@ -42,24 +37,18 @@ def extract_word_text(file):
         return ""
 
 def upload_data():
-    uploaded_file = st.file_uploader("Upload a file (CSV, PDF, or DOCX)", type=["csv", "pdf", "docx"])
+    uploaded_file = st.file_uploader("Upload a dataset (CSV, XLSX)", type=["csv", "xlsx"])
     if uploaded_file:
         try:
             if uploaded_file.type == "text/csv":
                 data = pd.read_csv(uploaded_file)
-                st.dataframe(data)
-                save_database(data)
-                return data
-            elif uploaded_file.type == "application/pdf":
-                text = extract_pdf_text(uploaded_file)
-                st.text_area("PDF Content", text, height=300)
-                return text
-            elif uploaded_file.type == "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
-                text = extract_word_text(uploaded_file)
-                st.text_area("Word Content", text, height=300)
-                return text
             else:
-                st.error("Unsupported file type!")
+                data = pd.read_excel(uploaded_file)
+            
+            st.dataframe(data)
+            data.to_excel(DB_PATH, index=False)  # Save uploaded data
+            st.success("Dataset uploaded and saved successfully!")
+            return data
         except Exception as e:
             st.error(f"Error processing file: {e}")
     return None
@@ -91,7 +80,7 @@ def get_chatbot_response(user_input, database):
         questions = database["Question"].dropna().tolist()
         if questions:
             best_match, score = process.extractOne(user_input, questions)
-            if score > 60:
+            if score > 70:
                 response = database.loc[database["Question"] == best_match, "Response"].values[0]
                 return response
     
