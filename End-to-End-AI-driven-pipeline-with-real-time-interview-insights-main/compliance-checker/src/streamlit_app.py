@@ -4,19 +4,22 @@ import os
 from PyPDF2 import PdfReader
 from docx import Document
 
-# Set database path
-DB_PATH = "End-to-End-AI-driven-pipeline-with-real-time-interview-insights-main/compliance-checker/src/indian_health_chatbot_dataset.xlsx"
+DB_PATH = "indian_health_chatbot_dataset.xlsx"  # Ensure this path is correct
 
 def load_database():
-    """Loads the dataset from the given path."""
-    if os.path.exists(DB_PATH):
-        return pd.read_excel(DB_PATH)
-    else:
-        st.warning("Database not found! Please upload a dataset.")
+    try:
+        if os.path.exists(DB_PATH):
+            df = pd.read_excel(DB_PATH)
+            st.success("Database loaded successfully!")
+            return df
+        else:
+            st.warning("Database not found! Please upload a dataset.")
+            return pd.DataFrame()
+    except Exception as e:
+        st.error(f"Error loading database: {e}")
         return pd.DataFrame()
 
 def save_database(data):
-    """Saves data to the database."""
     try:
         data.to_excel(DB_PATH, index=False)
         st.success("Database updated successfully!")
@@ -24,7 +27,6 @@ def save_database(data):
         st.error(f"Failed to save the database: {e}")
 
 def extract_pdf_text(file):
-    """Extracts text from a PDF file."""
     try:
         reader = PdfReader(file)
         return '\n'.join([page.extract_text() for page in reader.pages if page.extract_text()])
@@ -33,16 +35,14 @@ def extract_pdf_text(file):
         return ""
 
 def extract_word_text(file):
-    """Extracts text from a Word document."""
     try:
         doc = Document(file)
-        return '\n'.join([para.text for para in doc.paragraphs])
+        return '\n'.join([para.text for para in doc.paragraphs if para.text.strip()])
     except Exception as e:
         st.error(f"Error reading Word document: {e}")
         return ""
 
 def upload_data():
-    """Handles file uploads and extracts content."""
     uploaded_file = st.file_uploader("Upload a file (CSV, PDF, or DOCX)", type=["csv", "pdf", "docx"])
     if uploaded_file:
         try:
@@ -52,11 +52,11 @@ def upload_data():
                 return data
             elif uploaded_file.type == "application/pdf":
                 text = extract_pdf_text(uploaded_file)
-                st.text_area("Extracted PDF Content", text, height=300)
+                st.text_area("PDF Content", text, height=300)
                 return text
             elif uploaded_file.type == "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
                 text = extract_word_text(uploaded_file)
-                st.text_area("Extracted Word Content", text, height=300)
+                st.text_area("Word Content", text, height=300)
                 return text
             else:
                 st.error("Unsupported file type!")
@@ -64,53 +64,54 @@ def upload_data():
             st.error(f"Error processing file: {e}")
     return None
 
-def chatbot():
-    """Chatbot functionality using dataset."""
-    st.sidebar.header("AI Chatbot Assistant")
-    
+def chatbot(database):
+    st.sidebar.header("Chatbot Assistant")
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = []
-    
-    db = load_database()
     
     for message in st.session_state.chat_history:
         with st.sidebar.chat_message(message["role"]):
             st.markdown(message["content"])
     
-    user_input = st.sidebar.chat_input("Ask something about health...")
+    user_input = st.sidebar.chat_input("Ask something...")
     if user_input:
         st.session_state.chat_history.append({"role": "user", "content": user_input})
-        
-        # Search dataset for related responses
-        response = "I couldn't find relevant information. Please rephrase your query."
-        if not db.empty:
-            matched_responses = db[db.apply(lambda row: row.astype(str).str.contains(user_input, case=False, na=False).any(), axis=1)]
-            if not matched_responses.empty:
-                response = matched_responses.sample(1).to_string(index=False)
-        
+        response = generate_response(user_input, database)
         st.session_state.chat_history.append({"role": "assistant", "content": response})
         st.sidebar.chat_message("user").markdown(user_input)
         st.sidebar.chat_message("assistant").markdown(response)
 
+def generate_response(user_input, database):
+    if database.empty:
+        return "I'm here to help, but I don't have any data to reference yet! Please upload a dataset."
+    
+    matched_rows = database[database.apply(lambda row: user_input.lower() in row.astype(str).str.lower().to_string(), axis=1)]
+    if not matched_rows.empty:
+        return matched_rows.iloc[0].to_string()
+    else:
+        return "I couldn't find relevant data in the database. Please try rephrasing your query."
+
 def main():
-    """Main function for Streamlit app."""
     st.title("Med Assist: AI-Powered Diagnostic Assistance and Chatbot")
+    
     st.sidebar.header("Navigation")
     options = st.sidebar.radio("Select a page:", ["Home", "Data Upload", "Database", "About"])
     
-    chatbot()
+    database = load_database()
+    chatbot(database)
     
     if options == "Home":
-        st.header("Welcome to the AI Health Assistant")
-        st.write("Ask health-related questions and get AI-powered responses.")
+        st.header("Welcome to Med Assist")
+        st.write("This app provides AI-powered health insights and chatbot support for medical queries.")
+    
     elif options == "Data Upload":
         st.header("Upload New Data")
         new_data = upload_data()
         if new_data is not None:
             st.session_state.new_data = new_data
+    
     elif options == "Database":
         st.header("Database Overview")
-        database = load_database()
         st.dataframe(database)
         
         if st.button("Save Uploaded Data to Database"):
@@ -119,10 +120,10 @@ def main():
                 save_database(updated_database)
             else:
                 st.warning("No new data available to save!")
+    
     elif options == "About":
         st.header("About This App")
-        st.write("This AI chatbot assists users with health-related inquiries using a dataset of common medical queries and responses.")
-        st.write("Author: Adarsh Ojaswi Singh")
+        st.write("Med Assist is an AI-powered chatbot designed to provide medical support using a preloaded dataset. It can analyze health conditions, offer recommendations, and help users understand medical information.")
 
 if __name__ == "__main__":
     main()
