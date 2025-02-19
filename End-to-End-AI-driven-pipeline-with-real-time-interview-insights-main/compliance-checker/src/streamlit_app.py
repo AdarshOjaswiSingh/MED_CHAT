@@ -18,6 +18,13 @@ def load_database():
         st.error(f"Failed to load database: {e}")
         return pd.DataFrame(columns=["Question", "Response"])
 
+def save_database(data):
+    try:
+        data.to_excel(DB_PATH, index=False)
+        st.success("Database updated successfully!")
+    except Exception as e:
+        st.error(f"Failed to save the database: {e}")
+
 def extract_pdf_text(file):
     try:
         reader = PdfReader(file)
@@ -41,6 +48,7 @@ def upload_data():
             if uploaded_file.type == "text/csv":
                 data = pd.read_csv(uploaded_file)
                 st.dataframe(data)
+                save_database(data)
                 return data
             elif uploaded_file.type == "application/pdf":
                 text = extract_pdf_text(uploaded_file)
@@ -83,7 +91,7 @@ def get_chatbot_response(user_input, database):
         questions = database["Question"].dropna().tolist()
         if questions:
             best_match, score = process.extractOne(user_input, questions)
-            if score > 70:
+            if score > 60:
                 response = database.loc[database["Question"] == best_match, "Response"].values[0]
                 return response
     
