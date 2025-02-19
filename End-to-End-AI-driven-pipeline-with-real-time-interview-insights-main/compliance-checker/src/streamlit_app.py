@@ -4,27 +4,18 @@ import os
 from PyPDF2 import PdfReader
 from docx import Document
 
-DB_PATH = "indian_health_chatbot_dataset.xlsx"  # Ensure this path is correct
+DB_PATH = "indian_health_chatbot_dataset.xlsx"
 
 def load_database():
     try:
         if os.path.exists(DB_PATH):
-            df = pd.read_excel(DB_PATH)
-            st.success("Database loaded successfully!")
-            return df
+            return pd.read_excel(DB_PATH)
         else:
             st.warning("Database not found! Please upload a dataset.")
             return pd.DataFrame()
     except Exception as e:
-        st.error(f"Error loading database: {e}")
+        st.error(f"Failed to load database: {e}")
         return pd.DataFrame()
-
-def save_database(data):
-    try:
-        data.to_excel(DB_PATH, index=False)
-        st.success("Database updated successfully!")
-    except Exception as e:
-        st.error(f"Failed to save the database: {e}")
 
 def extract_pdf_text(file):
     try:
@@ -76,24 +67,23 @@ def chatbot(database):
     user_input = st.sidebar.chat_input("Ask something...")
     if user_input:
         st.session_state.chat_history.append({"role": "user", "content": user_input})
-        response = generate_response(user_input, database)
+        response = search_database(database, user_input)
         st.session_state.chat_history.append({"role": "assistant", "content": response})
         st.sidebar.chat_message("user").markdown(user_input)
         st.sidebar.chat_message("assistant").markdown(response)
 
-def generate_response(user_input, database):
+def search_database(database, query):
     if database.empty:
-        return "I'm here to help, but I don't have any data to reference yet! Please upload a dataset."
+        return "Database not found! Please upload a dataset."
     
-    matched_rows = database[database.apply(lambda row: user_input.lower() in row.astype(str).str.lower().to_string(), axis=1)]
-    if not matched_rows.empty:
-        return matched_rows.iloc[0].to_string()
+    results = database[database.apply(lambda row: row.astype(str).str.contains(query, case=False, na=False).any(), axis=1)]
+    if not results.empty:
+        return results.iloc[0].to_dict()
     else:
         return "I couldn't find relevant data in the database. Please try rephrasing your query."
 
 def main():
     st.title("Med Assist: AI-Powered Diagnostic Assistance and Chatbot")
-    
     st.sidebar.header("Navigation")
     options = st.sidebar.radio("Select a page:", ["Home", "Data Upload", "Database", "About"])
     
@@ -101,8 +91,8 @@ def main():
     chatbot(database)
     
     if options == "Home":
-        st.header("Welcome to Med Assist")
-        st.write("This app provides AI-powered health insights and chatbot support for medical queries.")
+        st.header("Welcome to the Med Assist Dashboard")
+        st.write("This app provides AI-powered healthcare guidance and chatbot support based on an Indian health dataset.")
     
     elif options == "Data Upload":
         st.header("Upload New Data")
@@ -113,17 +103,10 @@ def main():
     elif options == "Database":
         st.header("Database Overview")
         st.dataframe(database)
-        
-        if st.button("Save Uploaded Data to Database"):
-            if 'new_data' in st.session_state and isinstance(st.session_state.new_data, pd.DataFrame):
-                updated_database = pd.concat([database, st.session_state.new_data], ignore_index=True)
-                save_database(updated_database)
-            else:
-                st.warning("No new data available to save!")
     
     elif options == "About":
         st.header("About This App")
-        st.write("Med Assist is an AI-powered chatbot designed to provide medical support using a preloaded dataset. It can analyze health conditions, offer recommendations, and help users understand medical information.")
+        st.write("Med Assist is an AI-driven chatbot designed to assist with health-related queries using a dataset focused on Indian healthcare.")
 
 if __name__ == "__main__":
     main()
