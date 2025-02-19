@@ -64,16 +64,35 @@ def upload_data():
             st.error(f"Error processing file: {e}")
     return None
 
+def chatbot():
+    st.sidebar.header("Chatbot Assistant")
+    if "chat_history" not in st.session_state:
+        st.session_state.chat_history = []
+    
+    for message in st.session_state.chat_history:
+        with st.sidebar.chat_message(message["role"]):
+            st.markdown(message["content"])
+    
+    user_input = st.sidebar.chat_input("Ask something...")
+    if user_input:
+        st.session_state.chat_history.append({"role": "user", "content": user_input})
+        response = "I'm here to help! How can I assist you?"  # Placeholder AI response
+        st.session_state.chat_history.append({"role": "assistant", "content": response})
+        st.sidebar.chat_message("user").markdown(user_input)
+        st.sidebar.chat_message("assistant").markdown(response)
+
 def main():
     st.title("Med Assist: AI-Powered Diagnostic Assistance and Comfort Chatbot")
     st.sidebar.header("Navigation")
     options = st.sidebar.radio("Select a page:", ["Home", "Data Upload", "Database", "About"])
+    
+    chatbot()  # Calling chatbot function to add it to sidebar
 
     if options == "Home":
         st.header("Welcome to the Vit Project Dashboard")
         st.write("This app is designed to showcase the key features and outputs of our project.")
         st.write("Use the sidebar to navigate through the app.")
-
+    
     elif options == "Data Upload":
         st.header("Upload New Data")
         new_data = upload_data()
