@@ -5,7 +5,7 @@ from PyPDF2 import PdfReader
 from docx import Document
 from fuzzywuzzy import process
 
-DB_PATH = "End-to-End-AI-driven-pipeline-with-real-time-interview-insights-main/compliance-checker/src/indian_health_chatbot_dataset.xlsx"
+DB_PATH = "indian_health_chatbot_dataset.xlsx"
 
 def load_database():
     if not os.path.exists(DB_PATH):
