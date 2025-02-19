@@ -141,7 +141,7 @@ def main():
     
     elif options == "About":
         st.header("About This App")
-        st.write("This chatbot assists users in managing their well-being with AI-driven recommendations.")
+        st.write("Med Assist: AI-Powered Diagnostic Assistance and Comfort Chatbot is an intelligent healthcare chatbot designed to assist users in understanding their symptoms and providing relevant medical insights. The chatbot leverages a structured dataset containing common health-related queries and responses, allowing users to receive instant guidance on symptoms like fever, headache, stress, and more. Additionally, users can upload previous prescriptions in formats like PDF, Word, or Excel to extract useful data for further analysis. With an intuitive interface and AI-driven responses, Med Assist aims to enhance accessibility to basic healthcare information and improve user well-being.")
 
 if __name__ == "__main__":
     main()
