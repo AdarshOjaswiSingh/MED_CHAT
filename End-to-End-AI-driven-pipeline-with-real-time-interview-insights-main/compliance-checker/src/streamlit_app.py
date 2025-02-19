@@ -43,6 +43,44 @@ def save_database(data):
         st.success("Database updated successfully!")
     except Exception as e:
         st.error(f"Failed to save the database: {e}")
+def extract_pdf_text(file):
+    try:
+        reader = PdfReader(file)
+        return ''.join([page.extract_text() for page in reader.pages])
+    except Exception as e:
+        st.error(f"Error reading PDF: {e}")
+        return ""
+
+def extract_word_text(file):
+    try:
+        doc = Document(file)
+        return '\n'.join([para.text for para in doc.paragraphs])
+    except Exception as e:
+        st.error(f"Error reading Word document: {e}")
+        return ""
+
+def upload_data():
+    uploaded_file = st.file_uploader("Upload a file (CSV, PDF, or DOCX)", type=["csv", "pdf", "docx"])
+    if uploaded_file:
+        try:
+            if uploaded_file.type == "text/csv":
+                data = pd.read_csv(uploaded_file)
+                st.dataframe(data)
+                return data
+            elif uploaded_file.type == "application/pdf":
+                text = extract_pdf_text(uploaded_file)
+                st.text_area("PDF Content", text, height=300)
+                return text
+            elif uploaded_file.type == "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
+                text = extract_word_text(uploaded_file)
+                st.text_area("Word Content", text, height=300)
+                return text
+            else:
+                st.error("Unsupported file type!")
+        except Exception as e:
+            st.error(f"Error processing file: {e}")
+    return None
+
 
 def chatbot():
     st.sidebar.header("Chatbot Assistant")
