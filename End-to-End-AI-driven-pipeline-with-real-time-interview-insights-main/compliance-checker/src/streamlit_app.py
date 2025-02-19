@@ -3,7 +3,6 @@ import pandas as pd
 import os
 from PyPDF2 import PdfReader
 from docx import Document
-from llama_cpp import Llama
 import openai
 
 # ===================== CONFIGURATION ===================== #
