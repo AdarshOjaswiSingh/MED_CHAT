@@ -13,3 +13,5 @@ python-dotenv
 PyPDF2
 python-docx
 openpyxl
+fuzzywuzzy
+python-Levenshtein
