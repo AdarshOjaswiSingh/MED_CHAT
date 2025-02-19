@@ -67,20 +67,22 @@ def upload_data():
 
 def chatbot(database):
     st.sidebar.header("Chatbot Assistant")
+    chatbot_container = st.sidebar.container()
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = []
     
-    for message in st.session_state.chat_history:
-        with st.sidebar.chat_message(message["role"]):
-            st.markdown(message["content"])
-    
-    user_input = st.sidebar.chat_input("Ask something...")
-    if user_input:
-        st.session_state.chat_history.append({"role": "user", "content": user_input})
-        response = get_chatbot_response(user_input, database)
-        st.session_state.chat_history.append({"role": "assistant", "content": response})
-        st.sidebar.chat_message("user").markdown(user_input)
-        st.sidebar.chat_message("assistant").markdown(response)
+    with chatbot_container:
+        for message in st.session_state.chat_history:
+            with st.chat_message(message["role"]):
+                st.markdown(message["content"])
+        
+        user_input = st.chat_input("Ask something...")
+        if user_input:
+            st.session_state.chat_history.append({"role": "user", "content": user_input})
+            response = get_chatbot_response(user_input, database)
+            st.session_state.chat_history.append({"role": "assistant", "content": response})
+            st.chat_message("user").markdown(user_input)
+            st.chat_message("assistant").markdown(response)
 
 def get_chatbot_response(user_input, database):
     greetings = ["hi", "hello", "hey", "greetings", "good morning", "good evening", "namaste"]
@@ -107,8 +109,9 @@ def main():
     
     database = load_database()
     
+    chatbot(database)
+    
     if options == "Home":
-        chatbot(database)
         st.header("Welcome to the Med Assist Dashboard")
         st.write("This app is designed to provide AI-powered diagnostic assistance and chatbot interactions.")
     
