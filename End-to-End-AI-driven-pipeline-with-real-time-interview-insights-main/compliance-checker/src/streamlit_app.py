@@ -5,20 +5,27 @@ from PyPDF2 import PdfReader
 from docx import Document
 from fuzzywuzzy import process
 
-DB_PATH = "indian_health_chatbot_dataset.xlsx"
+DB_PATH = "End-to-End-AI-driven-pipeline-with-real-time-interview-insights-main/compliance-checker/src/indian_health_chatbot_dataset.xlsx"
 
 def load_database():
     if not os.path.exists(DB_PATH):
         st.error("Database not found! Please upload a dataset in the 'Data Upload' section.")
-        return pd.DataFrame(columns=["Question", "Response"])
+        return pd.DataFrame()
     try:
         database = pd.read_excel(DB_PATH)
         if database.empty:
             st.warning("The dataset is empty. Please upload a valid dataset.")
+            return pd.DataFrame()
+        
+        required_columns = {"Question", "Response"}
+        if not required_columns.issubset(database.columns):
+            st.error("Dataset is missing required columns: 'Question' and 'Response'. Please upload a valid dataset.")
+            return pd.DataFrame()
+        
         return database
     except Exception as e:
         st.error(f"Error loading dataset: {e}")
-        return pd.DataFrame(columns=["Question", "Response"])
+        return pd.DataFrame()
 
 def extract_pdf_text(file):
     try:
@@ -44,6 +51,11 @@ def upload_data():
                 data = pd.read_csv(uploaded_file)
             else:
                 data = pd.read_excel(uploaded_file)
+            
+            required_columns = {"Question", "Response"}
+            if not required_columns.issubset(data.columns):
+                st.error("Uploaded dataset must contain 'Question' and 'Response' columns.")
+                return None
             
             st.dataframe(data)
             data.to_excel(DB_PATH, index=False)  # Save uploaded data
@@ -76,13 +88,15 @@ def get_chatbot_response(user_input, database):
     if user_input.lower() in greetings:
         return "Hello! How can I assist you today?"
     
-    if not database.empty:
-        questions = database["Question"].dropna().tolist()
-        if questions:
-            best_match, score = process.extractOne(user_input, questions)
-            if score > 70:
-                response = database.loc[database["Question"] == best_match, "Response"].values[0]
-                return response
+    if database.empty or "Question" not in database or "Response" not in database:
+        return "I'm here to help, but no valid dataset was found. Please upload a proper dataset."
+    
+    questions = database["Question"].dropna().tolist()
+    if questions:
+        best_match, score = process.extractOne(user_input, questions)
+        if score > 70:
+            response = database.loc[database["Question"] == best_match, "Response"].values[0]
+            return response
     
     return "I'm here to help, but I couldn't find relevant data. Can you provide more details?"
 
