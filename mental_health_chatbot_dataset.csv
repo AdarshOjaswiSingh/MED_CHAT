@@ -1,0 +1,201 @@
+User_ID,Age,Gender,Date,Mood,Mood_Score,Symptom,User_Input,Chatbot_Response,Recommendation
+User_1,56,Male,2024-01-26,Stressed,6,None,I feel stressed today with none,Try Meditation to manage stressed mood.,Support Groups
+User_1,56,Male,2024-01-29,Stressed,6,None,I feel stressed today with none,Try Meditation to manage stressed mood.,Mindfulness Apps
+User_1,56,Male,2024-02-20,Neutral,3,Insomnia,I feel neutral today with insomnia,Try Deep Breathing to manage neutral mood.,Online Therapy
+User_1,56,Male,2024-02-03,Sad,3,Fatigue,I feel sad today with fatigue,Try Journaling to manage sad mood.,Self-Help Books
+User_1,56,Male,2024-01-07,Excited,1,None,I feel excited today with none,Try Progressive Muscle Relaxation to manage excited mood.,CBT Worksheets
+User_1,56,Male,2024-02-04,Happy,4,None,I feel happy today with none,Try Meditation to manage happy mood.,CBT Worksheets
+User_1,56,Male,2024-01-03,Stressed,1,Irritability,I feel stressed today with irritability,Try Progressive Muscle Relaxation to manage stressed mood.,Support Groups
+User_1,56,Male,2024-02-06,Stressed,9,Irritability,I feel stressed today with irritability,Try Progressive Muscle Relaxation to manage stressed mood.,Self-Help Books
+User_1,56,Male,2024-02-22,Stressed,8,None,I feel stressed today with none,Try Journaling to manage stressed mood.,Online Therapy
+User_1,56,Male,2024-01-15,Stressed,10,Irritability,I feel stressed today with irritability,Try Progressive Muscle Relaxation to manage stressed mood.,CBT Worksheets
+User_2,38,Female,2024-01-23,Anxious,3,None,I feel anxious today with none,Try Journaling to manage anxious mood.,Self-Help Books
+User_2,38,Female,2024-01-10,Excited,1,Fatigue,I feel excited today with fatigue,Try Progressive Muscle Relaxation to manage excited mood.,CBT Worksheets
+User_2,38,Female,2024-02-06,Happy,2,Insomnia,I feel happy today with insomnia,Try Progressive Muscle Relaxation to manage happy mood.,Online Therapy
+User_2,38,Female,2024-01-06,Sad,10,None,I feel sad today with none,Try Yoga to manage sad mood.,Self-Help Books
+User_2,38,Female,2024-02-11,Anxious,4,Lack of Motivation,I feel anxious today with lack of motivation,Try Deep Breathing to manage anxious mood.,Support Groups
+User_2,38,Female,2024-02-03,Excited,8,Irritability,I feel excited today with irritability,Try Meditation to manage excited mood.,Self-Help Books
+User_2,38,Female,2024-01-29,Excited,1,Headache,I feel excited today with headache,Try Journaling to manage excited mood.,Online Therapy
+User_2,38,Female,2024-01-11,Neutral,2,None,I feel neutral today with none,Try Progressive Muscle Relaxation to manage neutral mood.,Self-Help Books
+User_2,38,Female,2024-02-25,Neutral,6,None,I feel neutral today with none,Try Deep Breathing to manage neutral mood.,Mindfulness Apps
+User_2,38,Female,2024-02-02,Happy,3,Lack of Motivation,I feel happy today with lack of motivation,Try Journaling to manage happy mood.,Self-Help Books
+User_3,23,Non-Binary,2024-02-27,Stressed,9,Irritability,I feel stressed today with irritability,Try Journaling to manage stressed mood.,Mindfulness Apps
+User_3,23,Non-Binary,2024-01-03,Excited,6,None,I feel excited today with none,Try Deep Breathing to manage excited mood.,Support Groups
+User_3,23,Non-Binary,2024-01-22,Neutral,6,None,I feel neutral today with none,Try Meditation to manage neutral mood.,Support Groups
+User_3,23,Non-Binary,2024-02-14,Anxious,6,None,I feel anxious today with none,Try Yoga to manage anxious mood.,Support Groups
+User_3,23,Non-Binary,2024-01-01,Neutral,4,Lack of Motivation,I feel neutral today with lack of motivation,Try Yoga to manage neutral mood.,CBT Worksheets
+User_3,23,Non-Binary,2024-02-13,Sad,8,None,I feel sad today with none,Try Journaling to manage sad mood.,Online Therapy
+User_3,23,Non-Binary,2024-02-11,Excited,8,None,I feel excited today with none,Try Yoga to manage excited mood.,Support Groups
+User_3,23,Non-Binary,2024-02-21,Stressed,3,Headache,I feel stressed today with headache,Try Yoga to manage stressed mood.,Online Therapy
+User_3,23,Non-Binary,2024-02-02,Happy,5,Irritability,I feel happy today with irritability,Try Yoga to manage happy mood.,Self-Help Books
+User_3,23,Non-Binary,2024-02-25,Sad,3,Fatigue,I feel sad today with fatigue,Try Journaling to manage sad mood.,Support Groups
+User_4,25,Female,2024-01-27,Excited,2,Irritability,I feel excited today with irritability,Try Meditation to manage excited mood.,CBT Worksheets
+User_4,25,Female,2024-02-02,Neutral,4,Lack of Motivation,I feel neutral today with lack of motivation,Try Meditation to manage neutral mood.,Online Therapy
+User_4,25,Female,2024-01-13,Stressed,6,Fatigue,I feel stressed today with fatigue,Try Yoga to manage stressed mood.,Support Groups
+User_4,25,Female,2024-01-27,Excited,7,Fatigue,I feel excited today with fatigue,Try Yoga to manage excited mood.,Self-Help Books
+User_4,25,Female,2024-02-09,Neutral,2,Insomnia,I feel neutral today with insomnia,Try Meditation to manage neutral mood.,Support Groups
+User_4,25,Female,2024-01-03,Excited,6,None,I feel excited today with none,Try Meditation to manage excited mood.,Online Therapy
+User_4,25,Female,2024-02-19,Excited,4,Headache,I feel excited today with headache,Try Progressive Muscle Relaxation to manage excited mood.,Support Groups
+User_4,25,Female,2024-01-24,Anxious,8,Lack of Motivation,I feel anxious today with lack of motivation,Try Deep Breathing to manage anxious mood.,Support Groups
+User_4,25,Female,2024-02-06,Anxious,7,None,I feel anxious today with none,Try Deep Breathing to manage anxious mood.,Online Therapy
+User_4,25,Female,2024-01-14,Happy,6,None,I feel happy today with none,Try Journaling to manage happy mood.,Online Therapy
+User_5,28,Non-Binary,2024-02-06,Sad,8,Headache,I feel sad today with headache,Try Yoga to manage sad mood.,CBT Worksheets
+User_5,28,Non-Binary,2024-01-25,Excited,5,None,I feel excited today with none,Try Meditation to manage excited mood.,Online Therapy
+User_5,28,Non-Binary,2024-02-10,Neutral,6,Irritability,I feel neutral today with irritability,Try Yoga to manage neutral mood.,Mindfulness Apps
+User_5,28,Non-Binary,2024-02-28,Excited,2,Headache,I feel excited today with headache,Try Yoga to manage excited mood.,Self-Help Books
+User_5,28,Non-Binary,2024-02-11,Sad,4,Fatigue,I feel sad today with fatigue,Try Deep Breathing to manage sad mood.,CBT Worksheets
+User_5,28,Non-Binary,2024-01-20,Happy,4,None,I feel happy today with none,Try Deep Breathing to manage happy mood.,CBT Worksheets
+User_5,28,Non-Binary,2024-03-01,Stressed,10,None,I feel stressed today with none,Try Journaling to manage stressed mood.,CBT Worksheets
+User_5,28,Non-Binary,2024-01-17,Stressed,6,Insomnia,I feel stressed today with insomnia,Try Meditation to manage stressed mood.,Mindfulness Apps
+User_5,28,Non-Binary,2024-01-24,Anxious,9,Headache,I feel anxious today with headache,Try Meditation to manage anxious mood.,CBT Worksheets
+User_5,28,Non-Binary,2024-01-14,Stressed,1,Irritability,I feel stressed today with irritability,Try Deep Breathing to manage stressed mood.,CBT Worksheets
+User_6,42,Non-Binary,2024-02-11,Anxious,7,Lack of Motivation,I feel anxious today with lack of motivation,Try Journaling to manage anxious mood.,Self-Help Books
+User_6,42,Non-Binary,2024-01-26,Anxious,1,None,I feel anxious today with none,Try Deep Breathing to manage anxious mood.,CBT Worksheets
+User_6,42,Non-Binary,2024-02-01,Excited,7,None,I feel excited today with none,Try Progressive Muscle Relaxation to manage excited mood.,Online Therapy
+User_6,42,Non-Binary,2024-01-24,Sad,10,None,I feel sad today with none,Try Progressive Muscle Relaxation to manage sad mood.,Self-Help Books
+User_6,42,Non-Binary,2024-01-22,Happy,6,Fatigue,I feel happy today with fatigue,Try Progressive Muscle Relaxation to manage happy mood.,CBT Worksheets
+User_6,42,Non-Binary,2024-02-20,Anxious,1,Irritability,I feel anxious today with irritability,Try Meditation to manage anxious mood.,Self-Help Books
+User_6,42,Non-Binary,2024-02-20,Happy,1,Insomnia,I feel happy today with insomnia,Try Yoga to manage happy mood.,Self-Help Books
+User_6,42,Non-Binary,2024-02-19,Excited,7,None,I feel excited today with none,Try Yoga to manage excited mood.,Online Therapy
+User_6,42,Non-Binary,2024-01-15,Anxious,3,Headache,I feel anxious today with headache,Try Journaling to manage anxious mood.,CBT Worksheets
+User_6,42,Non-Binary,2024-02-03,Happy,5,Insomnia,I feel happy today with insomnia,Try Yoga to manage happy mood.,Mindfulness Apps
+User_7,19,Female,2024-02-03,Stressed,5,Lack of Motivation,I feel stressed today with lack of motivation,Try Journaling to manage stressed mood.,CBT Worksheets
+User_7,19,Female,2024-01-07,Happy,8,Lack of Motivation,I feel happy today with lack of motivation,Try Progressive Muscle Relaxation to manage happy mood.,Support Groups
+User_7,19,Female,2024-01-15,Anxious,2,None,I feel anxious today with none,Try Meditation to manage anxious mood.,Mindfulness Apps
+User_7,19,Female,2024-01-26,Neutral,9,None,I feel neutral today with none,Try Deep Breathing to manage neutral mood.,Mindfulness Apps
+User_7,19,Female,2024-01-23,Sad,6,Irritability,I feel sad today with irritability,Try Deep Breathing to manage sad mood.,CBT Worksheets
+User_7,19,Female,2024-01-30,Neutral,2,Irritability,I feel neutral today with irritability,Try Yoga to manage neutral mood.,Self-Help Books
+User_7,19,Female,2024-02-22,Anxious,2,Lack of Motivation,I feel anxious today with lack of motivation,Try Deep Breathing to manage anxious mood.,CBT Worksheets
+User_7,19,Female,2024-01-27,Neutral,4,None,I feel neutral today with none,Try Meditation to manage neutral mood.,Support Groups
+User_7,19,Female,2024-02-19,Sad,6,Fatigue,I feel sad today with fatigue,Try Yoga to manage sad mood.,Online Therapy
+User_7,19,Female,2024-01-04,Excited,6,Headache,I feel excited today with headache,Try Meditation to manage excited mood.,CBT Worksheets
+User_8,27,Female,2024-02-13,Excited,8,Insomnia,I feel excited today with insomnia,Try Meditation to manage excited mood.,Support Groups
+User_8,27,Female,2024-02-02,Neutral,4,Headache,I feel neutral today with headache,Try Yoga to manage neutral mood.,Support Groups
+User_8,27,Female,2024-01-25,Sad,9,Lack of Motivation,I feel sad today with lack of motivation,Try Journaling to manage sad mood.,Support Groups
+User_8,27,Female,2024-02-26,Neutral,10,Fatigue,I feel neutral today with fatigue,Try Deep Breathing to manage neutral mood.,Online Therapy
+User_8,27,Female,2024-02-18,Anxious,3,Fatigue,I feel anxious today with fatigue,Try Journaling to manage anxious mood.,Online Therapy
+User_8,27,Female,2024-01-02,Excited,9,None,I feel excited today with none,Try Deep Breathing to manage excited mood.,CBT Worksheets
+User_8,27,Female,2024-01-10,Happy,5,None,I feel happy today with none,Try Progressive Muscle Relaxation to manage happy mood.,CBT Worksheets
+User_8,27,Female,2024-01-30,Sad,3,Headache,I feel sad today with headache,Try Journaling to manage sad mood.,Mindfulness Apps
+User_8,27,Female,2024-02-20,Neutral,8,Insomnia,I feel neutral today with insomnia,Try Progressive Muscle Relaxation to manage neutral mood.,CBT Worksheets
+User_8,27,Female,2024-02-25,Happy,1,Headache,I feel happy today with headache,Try Meditation to manage happy mood.,Online Therapy
+User_9,51,Female,2024-02-14,Excited,8,Lack of Motivation,I feel excited today with lack of motivation,Try Journaling to manage excited mood.,CBT Worksheets
+User_9,51,Female,2024-01-01,Anxious,9,Insomnia,I feel anxious today with insomnia,Try Meditation to manage anxious mood.,CBT Worksheets
+User_9,51,Female,2024-01-20,Sad,10,Fatigue,I feel sad today with fatigue,Try Progressive Muscle Relaxation to manage sad mood.,CBT Worksheets
+User_9,51,Female,2024-01-18,Happy,5,Fatigue,I feel happy today with fatigue,Try Journaling to manage happy mood.,Support Groups
+User_9,51,Female,2024-02-11,Excited,9,Insomnia,I feel excited today with insomnia,Try Yoga to manage excited mood.,Mindfulness Apps
+User_9,51,Female,2024-02-06,Stressed,10,None,I feel stressed today with none,Try Meditation to manage stressed mood.,Mindfulness Apps
+User_9,51,Female,2024-01-06,Stressed,5,None,I feel stressed today with none,Try Deep Breathing to manage stressed mood.,CBT Worksheets
+User_9,51,Female,2024-01-16,Excited,7,None,I feel excited today with none,Try Meditation to manage excited mood.,Self-Help Books
+User_9,51,Female,2024-01-27,Excited,6,None,I feel excited today with none,Try Meditation to manage excited mood.,Self-Help Books
+User_9,51,Female,2024-01-31,Excited,7,None,I feel excited today with none,Try Progressive Muscle Relaxation to manage excited mood.,CBT Worksheets
+User_10,24,Non-Binary,2024-02-08,Excited,4,Irritability,I feel excited today with irritability,Try Meditation to manage excited mood.,CBT Worksheets
+User_10,24,Non-Binary,2024-01-25,Sad,10,Irritability,I feel sad today with irritability,Try Progressive Muscle Relaxation to manage sad mood.,Mindfulness Apps
+User_10,24,Non-Binary,2024-02-18,Neutral,9,None,I feel neutral today with none,Try Progressive Muscle Relaxation to manage neutral mood.,Online Therapy
+User_10,24,Non-Binary,2024-01-28,Neutral,2,Headache,I feel neutral today with headache,Try Journaling to manage neutral mood.,Online Therapy
+User_10,24,Non-Binary,2024-02-14,Excited,10,Irritability,I feel excited today with irritability,Try Meditation to manage excited mood.,Mindfulness Apps
+User_10,24,Non-Binary,2024-02-05,Sad,4,Lack of Motivation,I feel sad today with lack of motivation,Try Progressive Muscle Relaxation to manage sad mood.,Support Groups
+User_10,24,Non-Binary,2024-02-23,Happy,6,None,I feel happy today with none,Try Progressive Muscle Relaxation to manage happy mood.,Support Groups
+User_10,24,Non-Binary,2024-01-19,Happy,3,Irritability,I feel happy today with irritability,Try Journaling to manage happy mood.,Support Groups
+User_10,24,Non-Binary,2024-01-09,Stressed,4,Fatigue,I feel stressed today with fatigue,Try Meditation to manage stressed mood.,Support Groups
+User_10,24,Non-Binary,2024-01-06,Neutral,1,None,I feel neutral today with none,Try Meditation to manage neutral mood.,Support Groups
+User_11,21,Female,2024-01-27,Happy,1,Insomnia,I feel happy today with insomnia,Try Journaling to manage happy mood.,Mindfulness Apps
+User_11,21,Female,2024-02-01,Happy,2,Lack of Motivation,I feel happy today with lack of motivation,Try Journaling to manage happy mood.,CBT Worksheets
+User_11,21,Female,2024-01-03,Happy,1,Fatigue,I feel happy today with fatigue,Try Progressive Muscle Relaxation to manage happy mood.,Mindfulness Apps
+User_11,21,Female,2024-01-27,Stressed,2,None,I feel stressed today with none,Try Journaling to manage stressed mood.,CBT Worksheets
+User_11,21,Female,2024-02-06,Excited,4,None,I feel excited today with none,Try Journaling to manage excited mood.,CBT Worksheets
+User_11,21,Female,2024-01-03,Anxious,6,None,I feel anxious today with none,Try Deep Breathing to manage anxious mood.,Online Therapy
+User_11,21,Female,2024-02-23,Happy,8,None,I feel happy today with none,Try Meditation to manage happy mood.,Self-Help Books
+User_11,21,Female,2024-02-28,Excited,3,None,I feel excited today with none,Try Journaling to manage excited mood.,Mindfulness Apps
+User_11,21,Female,2024-02-17,Sad,8,Irritability,I feel sad today with irritability,Try Deep Breathing to manage sad mood.,Self-Help Books
+User_11,21,Female,2024-01-27,Stressed,6,Lack of Motivation,I feel stressed today with lack of motivation,Try Meditation to manage stressed mood.,Online Therapy
+User_12,36,Male,2024-01-29,Happy,7,None,I feel happy today with none,Try Deep Breathing to manage happy mood.,CBT Worksheets
+User_12,36,Male,2024-01-24,Happy,3,Irritability,I feel happy today with irritability,Try Meditation to manage happy mood.,Support Groups
+User_12,36,Male,2024-02-15,Happy,5,None,I feel happy today with none,Try Meditation to manage happy mood.,Self-Help Books
+User_12,36,Male,2024-02-22,Happy,10,Headache,I feel happy today with headache,Try Deep Breathing to manage happy mood.,CBT Worksheets
+User_12,36,Male,2024-01-06,Anxious,8,None,I feel anxious today with none,Try Journaling to manage anxious mood.,Mindfulness Apps
+User_12,36,Male,2024-01-23,Sad,2,None,I feel sad today with none,Try Yoga to manage sad mood.,Self-Help Books
+User_12,36,Male,2024-02-11,Neutral,4,Headache,I feel neutral today with headache,Try Progressive Muscle Relaxation to manage neutral mood.,CBT Worksheets
+User_12,36,Male,2024-02-19,Anxious,5,Lack of Motivation,I feel anxious today with lack of motivation,Try Meditation to manage anxious mood.,Self-Help Books
+User_12,36,Male,2024-01-03,Happy,6,None,I feel happy today with none,Try Journaling to manage happy mood.,CBT Worksheets
+User_12,36,Male,2024-02-07,Excited,2,Insomnia,I feel excited today with insomnia,Try Meditation to manage excited mood.,Support Groups
+User_13,56,Female,2024-02-24,Sad,3,None,I feel sad today with none,Try Journaling to manage sad mood.,Online Therapy
+User_13,56,Female,2024-01-21,Neutral,3,None,I feel neutral today with none,Try Yoga to manage neutral mood.,Mindfulness Apps
+User_13,56,Female,2024-01-10,Happy,2,Irritability,I feel happy today with irritability,Try Progressive Muscle Relaxation to manage happy mood.,Self-Help Books
+User_13,56,Female,2024-02-07,Excited,2,None,I feel excited today with none,Try Progressive Muscle Relaxation to manage excited mood.,Self-Help Books
+User_13,56,Female,2024-01-26,Stressed,2,None,I feel stressed today with none,Try Progressive Muscle Relaxation to manage stressed mood.,Mindfulness Apps
+User_13,56,Female,2024-01-06,Anxious,5,None,I feel anxious today with none,Try Meditation to manage anxious mood.,Support Groups
+User_13,56,Female,2024-02-15,Stressed,2,Lack of Motivation,I feel stressed today with lack of motivation,Try Journaling to manage stressed mood.,Mindfulness Apps
+User_13,56,Female,2024-01-08,Sad,4,Fatigue,I feel sad today with fatigue,Try Yoga to manage sad mood.,Online Therapy
+User_13,56,Female,2024-02-03,Excited,9,None,I feel excited today with none,Try Yoga to manage excited mood.,CBT Worksheets
+User_13,56,Female,2024-01-29,Neutral,7,None,I feel neutral today with none,Try Progressive Muscle Relaxation to manage neutral mood.,Support Groups
+User_14,43,Female,2024-01-11,Stressed,6,Headache,I feel stressed today with headache,Try Journaling to manage stressed mood.,CBT Worksheets
+User_14,43,Female,2024-01-20,Neutral,4,Insomnia,I feel neutral today with insomnia,Try Meditation to manage neutral mood.,CBT Worksheets
+User_14,43,Female,2024-01-19,Neutral,4,Insomnia,I feel neutral today with insomnia,Try Progressive Muscle Relaxation to manage neutral mood.,Online Therapy
+User_14,43,Female,2024-01-20,Sad,5,Irritability,I feel sad today with irritability,Try Progressive Muscle Relaxation to manage sad mood.,Support Groups
+User_14,43,Female,2024-02-25,Sad,2,None,I feel sad today with none,Try Journaling to manage sad mood.,Support Groups
+User_14,43,Female,2024-02-10,Stressed,6,None,I feel stressed today with none,Try Journaling to manage stressed mood.,Self-Help Books
+User_14,43,Female,2024-02-06,Neutral,10,Headache,I feel neutral today with headache,Try Deep Breathing to manage neutral mood.,CBT Worksheets
+User_14,43,Female,2024-01-26,Sad,2,Insomnia,I feel sad today with insomnia,Try Progressive Muscle Relaxation to manage sad mood.,Support Groups
+User_14,43,Female,2024-01-22,Stressed,10,Insomnia,I feel stressed today with insomnia,Try Progressive Muscle Relaxation to manage stressed mood.,Self-Help Books
+User_14,43,Female,2024-02-13,Happy,9,Insomnia,I feel happy today with insomnia,Try Journaling to manage happy mood.,Mindfulness Apps
+User_15,59,Male,2024-01-25,Neutral,6,Irritability,I feel neutral today with irritability,Try Deep Breathing to manage neutral mood.,Online Therapy
+User_15,59,Male,2024-03-01,Neutral,1,Fatigue,I feel neutral today with fatigue,Try Deep Breathing to manage neutral mood.,Mindfulness Apps
+User_15,59,Male,2024-02-15,Neutral,1,None,I feel neutral today with none,Try Journaling to manage neutral mood.,CBT Worksheets
+User_15,59,Male,2024-02-16,Happy,2,None,I feel happy today with none,Try Deep Breathing to manage happy mood.,Online Therapy
+User_15,59,Male,2024-02-02,Anxious,7,Headache,I feel anxious today with headache,Try Meditation to manage anxious mood.,Support Groups
+User_15,59,Male,2024-02-01,Excited,6,None,I feel excited today with none,Try Deep Breathing to manage excited mood.,Support Groups
+User_15,59,Male,2024-01-26,Neutral,8,Irritability,I feel neutral today with irritability,Try Progressive Muscle Relaxation to manage neutral mood.,CBT Worksheets
+User_15,59,Male,2024-01-11,Stressed,6,None,I feel stressed today with none,Try Progressive Muscle Relaxation to manage stressed mood.,Mindfulness Apps
+User_15,59,Male,2024-01-18,Sad,6,Headache,I feel sad today with headache,Try Deep Breathing to manage sad mood.,CBT Worksheets
+User_15,59,Male,2024-01-27,Anxious,2,None,I feel anxious today with none,Try Journaling to manage anxious mood.,Online Therapy
+User_16,31,Male,2024-01-12,Stressed,6,Insomnia,I feel stressed today with insomnia,Try Progressive Muscle Relaxation to manage stressed mood.,CBT Worksheets
+User_16,31,Male,2024-01-11,Anxious,10,None,I feel anxious today with none,Try Journaling to manage anxious mood.,Mindfulness Apps
+User_16,31,Male,2024-02-15,Happy,8,Lack of Motivation,I feel happy today with lack of motivation,Try Meditation to manage happy mood.,Self-Help Books
+User_16,31,Male,2024-02-23,Sad,10,Irritability,I feel sad today with irritability,Try Journaling to manage sad mood.,CBT Worksheets
+User_16,31,Male,2024-02-01,Excited,5,Irritability,I feel excited today with irritability,Try Journaling to manage excited mood.,Support Groups
+User_16,31,Male,2024-02-02,Stressed,6,Headache,I feel stressed today with headache,Try Yoga to manage stressed mood.,Mindfulness Apps
+User_16,31,Male,2024-01-31,Excited,9,Headache,I feel excited today with headache,Try Progressive Muscle Relaxation to manage excited mood.,CBT Worksheets
+User_16,31,Male,2024-01-11,Happy,1,None,I feel happy today with none,Try Meditation to manage happy mood.,Support Groups
+User_16,31,Male,2024-01-26,Sad,7,None,I feel sad today with none,Try Meditation to manage sad mood.,CBT Worksheets
+User_16,31,Male,2024-02-26,Stressed,3,Lack of Motivation,I feel stressed today with lack of motivation,Try Yoga to manage stressed mood.,Support Groups
+User_17,47,Non-Binary,2024-01-30,Neutral,10,Fatigue,I feel neutral today with fatigue,Try Yoga to manage neutral mood.,Self-Help Books
+User_17,47,Non-Binary,2024-01-11,Excited,8,Lack of Motivation,I feel excited today with lack of motivation,Try Yoga to manage excited mood.,Mindfulness Apps
+User_17,47,Non-Binary,2024-02-17,Neutral,5,None,I feel neutral today with none,Try Deep Breathing to manage neutral mood.,CBT Worksheets
+User_17,47,Non-Binary,2024-01-07,Sad,7,None,I feel sad today with none,Try Journaling to manage sad mood.,Self-Help Books
+User_17,47,Non-Binary,2024-02-28,Excited,1,None,I feel excited today with none,Try Yoga to manage excited mood.,CBT Worksheets
+User_17,47,Non-Binary,2024-01-19,Stressed,9,Fatigue,I feel stressed today with fatigue,Try Journaling to manage stressed mood.,Online Therapy
+User_17,47,Non-Binary,2024-01-05,Happy,9,None,I feel happy today with none,Try Journaling to manage happy mood.,Mindfulness Apps
+User_17,47,Non-Binary,2024-01-05,Sad,9,Lack of Motivation,I feel sad today with lack of motivation,Try Meditation to manage sad mood.,Mindfulness Apps
+User_17,47,Non-Binary,2024-01-02,Sad,8,Insomnia,I feel sad today with insomnia,Try Progressive Muscle Relaxation to manage sad mood.,Self-Help Books
+User_17,47,Non-Binary,2024-01-05,Sad,3,None,I feel sad today with none,Try Deep Breathing to manage sad mood.,Support Groups
+User_18,46,Non-Binary,2024-02-29,Excited,5,None,I feel excited today with none,Try Progressive Muscle Relaxation to manage excited mood.,Mindfulness Apps
+User_18,46,Non-Binary,2024-02-26,Neutral,9,Insomnia,I feel neutral today with insomnia,Try Progressive Muscle Relaxation to manage neutral mood.,Mindfulness Apps
+User_18,46,Non-Binary,2024-02-11,Excited,10,Lack of Motivation,I feel excited today with lack of motivation,Try Deep Breathing to manage excited mood.,CBT Worksheets
+User_18,46,Non-Binary,2024-01-02,Excited,9,Headache,I feel excited today with headache,Try Deep Breathing to manage excited mood.,CBT Worksheets
+User_18,46,Non-Binary,2024-01-07,Sad,8,Headache,I feel sad today with headache,Try Journaling to manage sad mood.,Online Therapy
+User_18,46,Non-Binary,2024-01-22,Neutral,10,None,I feel neutral today with none,Try Meditation to manage neutral mood.,CBT Worksheets
+User_18,46,Non-Binary,2024-01-04,Stressed,8,Headache,I feel stressed today with headache,Try Meditation to manage stressed mood.,Support Groups
+User_18,46,Non-Binary,2024-02-08,Neutral,4,Lack of Motivation,I feel neutral today with lack of motivation,Try Journaling to manage neutral mood.,Online Therapy
+User_18,46,Non-Binary,2024-02-01,Anxious,6,Fatigue,I feel anxious today with fatigue,Try Progressive Muscle Relaxation to manage anxious mood.,Mindfulness Apps
+User_18,46,Non-Binary,2024-02-05,Excited,4,Irritability,I feel excited today with irritability,Try Deep Breathing to manage excited mood.,Online Therapy
+User_19,56,Male,2024-02-21,Neutral,4,Irritability,I feel neutral today with irritability,Try Journaling to manage neutral mood.,Support Groups
+User_19,56,Male,2024-02-13,Stressed,2,Irritability,I feel stressed today with irritability,Try Deep Breathing to manage stressed mood.,Mindfulness Apps
+User_19,56,Male,2024-02-14,Excited,6,Headache,I feel excited today with headache,Try Yoga to manage excited mood.,Self-Help Books
+User_19,56,Male,2024-01-09,Sad,4,Insomnia,I feel sad today with insomnia,Try Journaling to manage sad mood.,Mindfulness Apps
+User_19,56,Male,2024-01-26,Happy,10,None,I feel happy today with none,Try Meditation to manage happy mood.,CBT Worksheets
+User_19,56,Male,2024-01-11,Sad,4,Irritability,I feel sad today with irritability,Try Yoga to manage sad mood.,Online Therapy
+User_19,56,Male,2024-02-07,Neutral,10,Headache,I feel neutral today with headache,Try Journaling to manage neutral mood.,Online Therapy
+User_19,56,Male,2024-01-09,Sad,8,Irritability,I feel sad today with irritability,Try Deep Breathing to manage sad mood.,Online Therapy
+User_19,56,Male,2024-02-20,Anxious,2,Headache,I feel anxious today with headache,Try Deep Breathing to manage anxious mood.,Online Therapy
+User_19,56,Male,2024-01-10,Happy,8,Irritability,I feel happy today with irritability,Try Meditation to manage happy mood.,CBT Worksheets
+User_20,59,Female,2024-01-25,Excited,6,Lack of Motivation,I feel excited today with lack of motivation,Try Meditation to manage excited mood.,Self-Help Books
+User_20,59,Female,2024-01-04,Excited,7,Fatigue,I feel excited today with fatigue,Try Meditation to manage excited mood.,CBT Worksheets
+User_20,59,Female,2024-01-16,Excited,3,None,I feel excited today with none,Try Deep Breathing to manage excited mood.,Support Groups
+User_20,59,Female,2024-02-22,Excited,2,None,I feel excited today with none,Try Yoga to manage excited mood.,Mindfulness Apps
+User_20,59,Female,2024-01-07,Neutral,3,None,I feel neutral today with none,Try Yoga to manage neutral mood.,Support Groups
+User_20,59,Female,2024-02-27,Sad,8,None,I feel sad today with none,Try Journaling to manage sad mood.,CBT Worksheets
+User_20,59,Female,2024-02-23,Happy,5,Fatigue,I feel happy today with fatigue,Try Yoga to manage happy mood.,Online Therapy
+User_20,59,Female,2024-02-16,Happy,2,Lack of Motivation,I feel happy today with lack of motivation,Try Meditation to manage happy mood.,Mindfulness Apps
+User_20,59,Female,2024-01-17,Happy,3,Lack of Motivation,I feel happy today with lack of motivation,Try Deep Breathing to manage happy mood.,CBT Worksheets
+User_20,59,Female,2024-01-16,Excited,9,None,I feel excited today with none,Try Yoga to manage excited mood.,Support Groups
