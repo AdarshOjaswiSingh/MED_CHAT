@@ -65,13 +65,13 @@ def upload_data():
     return None
 
 def main():
-    st.title("Contract Analysis System")
+    st.title("Med Assist: AI-Powered Diagnostic Assistance and Comfort Chatbot")
     st.sidebar.header("Navigation")
     options = st.sidebar.radio("Select a page:", ["Home", "Data Upload", "Database", "About"])
 
     if options == "Home":
-        st.header("Welcome to the Infosys Project Dashboard")
-        st.write("This app is designed to showcase the key features and outputs of my project.")
+        st.header("Welcome to the Vit Project Dashboard")
+        st.write("This app is designed to showcase the key features and outputs of our project.")
         st.write("Use the sidebar to navigate through the app.")
 
     elif options == "Data Upload":
