@@ -44,16 +44,27 @@ def extract_word_text(file):
         return ""
 
 def upload_data():
-    uploaded_file = st.file_uploader("Upload a dataset (CSV, XLSX)", type=["csv", "xlsx"])
+    uploaded_file = st.file_uploader("Please upload any previous prescription", type=["csv", "xlsx", "pdf", "docx"])
     if uploaded_file:
         try:
             if uploaded_file.type == "text/csv":
                 data = pd.read_csv(uploaded_file)
-            else:
+            elif uploaded_file.type == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet":
                 data = pd.read_excel(uploaded_file)
+            elif uploaded_file.type == "application/pdf":
+                text = extract_pdf_text(uploaded_file)
+                st.text_area("Extracted PDF Content", text, height=300)
+                return text
+            elif uploaded_file.type == "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
+                text = extract_word_text(uploaded_file)
+                st.text_area("Extracted Word Content", text, height=300)
+                return text
+            else:
+                st.error("Unsupported file type!")
+                return None
             
             required_columns = {"Question", "Response"}
-            if not required_columns.issubset(data.columns):
+            if isinstance(data, pd.DataFrame) and not required_columns.issubset(data.columns):
                 st.error("Uploaded dataset must contain 'Question' and 'Response' columns.")
                 return None
             
@@ -116,7 +127,7 @@ def main():
         st.write("This app is designed to provide AI-powered diagnostic assistance and chatbot interactions.")
     
     elif options == "Data Upload":
-        st.header("Upload New Data")
+        st.header("Please upload any previous prescription")
         new_data = upload_data()
         if new_data is not None:
             st.session_state.new_data = new_data
