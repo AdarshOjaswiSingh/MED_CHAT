@@ -5,7 +5,7 @@ from PyPDF2 import PdfReader
 from docx import Document
 from fuzzywuzzy import process
 
-DB_PATH = "indian_health_chatbot_dataset.xlsx"
+DB_PATH = "indian_health_chatbot_dataset (1)4444.xlsx"
 
 def load_database():
     if not os.path.exists(DB_PATH):
@@ -94,7 +94,7 @@ def get_chatbot_response(user_input, database):
     questions = database["Question"].dropna().tolist()
     if questions:
         best_match, score = process.extractOne(user_input, questions)
-        if score > 70:
+        if score > 60:  # Lowered threshold to improve matching
             response = database.loc[database["Question"] == best_match, "Response"].values[0]
             return response
     
@@ -106,9 +106,9 @@ def main():
     options = st.sidebar.radio("Select a page:", ["Home", "Data Upload", "Database", "About"])
     
     database = load_database()
-    chatbot(database)
-
+    
     if options == "Home":
+        chatbot(database)
         st.header("Welcome to the Med Assist Dashboard")
         st.write("This app is designed to provide AI-powered diagnostic assistance and chatbot interactions.")
     
